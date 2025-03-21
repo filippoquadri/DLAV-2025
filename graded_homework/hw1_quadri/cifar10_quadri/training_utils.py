@@ -6,7 +6,7 @@
 #    By: Filippo Quadri <filippo.quadri@epfl.ch>                               #
 #                                                                              #
 #    Created: 2025/03/10 11:52:30 by Filippo Quadri                            #
-#    Updated: 2025/03/11 07:43:05 by Filippo Quadri                            #
+#    Updated: 2025/03/16 09:59:15 by Filippo Quadri                            #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,5 +138,12 @@ def train_model(
                 print(f"Early stopping at epoch {epoch+1}. Restoring best model. Best validation accuracy: {best_val_acc:.2f}%")
                 model.load_state_dict(best_model)
                 break
+    
+
+    final_acc = best_val_acc if early_stopping else val_acc
+    print(f"End of the training... Final Validation Accuracy: {final_acc:.2f}")
+    if best_model:
+        print("Loading in the current model the best version of it during training")
+        model.load_state_dict(best_model) 
 
     return loss_history, acc_history, train_history
