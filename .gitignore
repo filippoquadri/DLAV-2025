@@ -3,3 +3,4 @@ MNIST_data/
 datasets/
 data_object_image_2.zip
 data_object_label_2.zip
+runs/
