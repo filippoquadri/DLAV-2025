@@ -4,3 +4,6 @@ datasets/
 data_object_image_2.zip
 data_object_label_2.zip
 runs/
+graded_homework/hw2/yolo11m.pt
+yolo11n.pt
+yolo11x.pt
